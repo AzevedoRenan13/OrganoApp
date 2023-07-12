@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Documentação da Aplicação
+## Introdução
+Esta é uma aplicação React que apresenta um formulário para cadastrar colaboradores em diferentes times. Os times são exibidos em cards com suas respectivas cores primárias e secundárias. Cada colaborador cadastrado é exibido no time correspondente.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Componentes
+A aplicação é composta pelos seguintes componentes:
 
-## Available Scripts
+## App
+O componente App é o componente principal que renderiza toda a aplicação. Ele possui o estado colaboradores que armazena a lista de colaboradores cadastrados. O componente também define a função aoNovoColaboradorAdicionado que é responsável por adicionar um novo colaborador à lista.
 
-In the project directory, you can run:
+## Estado
+ colaboradores: uma lista de objetos representando os colaboradores cadastrados. Cada objeto possui as propriedades nome (string), email (string) e time (string) representando o nome, e-mail e time do colaborador, respectivamente.
+### Banner
+O componente Banner exibe um banner na parte superior da página.
 
-### `npm start`
+## Formulario
+O componente Formulario exibe um formulário onde os usuários podem cadastrar novos colaboradores. Ele recebe a lista de nomes dos times disponíveis como prop times e a função aoColaboradorCadastrado como prop aoColaboradorCadastrado, que é chamada quando um novo colaborador é cadastrado.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Props
+times: uma lista de nomes de times disponíveis para seleção.
+aoColaboradorCadastrado: uma função que é chamada quando um novo colaborador é cadastrado. Recebe o objeto colaborador como argumento, contendo as propriedades nome, email e time do colaborador cadastrado.
+## Time
+O componente Time exibe um card representando um time. Ele recebe as informações do time, incluindo o nome, cores primária e secundária, e a lista de colaboradores pertencentes a esse time.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Props
+nome: o nome do time.
+corPrimaria: a cor primária do time, representada como uma string hexadecimal.
+corSecundaria: a cor secundária do time, representada como uma string hexadecimal.
+colaboradores: uma lista de objetos representando os colaboradores pertencentes a esse time. Cada objeto possui as propriedades nome, email e time representando o nome, e-mail e time do colaborador, respectivamente.
+# Fluxo da Aplicação
+## A aplicação segue o seguinte fluxo:
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+O componente App é renderizado e exibe o componente Banner no topo da página.
+Em seguida, o componente Formulario é renderizado. Ele recebe a lista de nomes dos times disponíveis como prop times e a função aoColaboradorCadastrado como prop aoColaboradorCadastrado.
+Quando um usuário preenche e envia o formulário, a função aoColaboradorCadastrado é chamada no componente Formulario. Essa função adiciona o novo colaborador à lista de colaboradores no estado colaboradores do componente App.
+Após o cadastro de um novo colaborador, o componente App renderiza os componentes Time para cada time na lista times. Ele passa as informações do time e a lista filtrada de colaboradores pertencentes a esse time como props para cada componente Time.
+Cada componente Time exibe as informações do time, incluindo seu nome e cores primária e secundária, bem como a lista de colaboradores pertencentes a esse time.
+Considerações Finais
+Esta é uma documentação básica da aplicação, fornecendo informações sobre seus componentes, props e fluxo de funcionamento. Caso haja necessidade de informações mais detalhadas ou alguma funcionalidade específica não esteja documentada, por favor, forneça mais detalhes para que eu possa ajudar de forma mais precisa.
